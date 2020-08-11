@@ -28,12 +28,13 @@ td, th {
     height: 150px;
 }
 a {
-    text-decoration-color: #D4342D;
+    color: #D4342D;
+    text-decoration: none;
 }
 p, body {
     color: #3179B2;
 }
-h1, h2, h3, a {
+h1, h2, h3{
     color: #D4342D;
     text-shadow: 1px 1px 1px #3179B2;
 }
@@ -77,6 +78,8 @@ header {
     float: left;
     width: 100%;
     margin-bottom: 2em;
+    border-bottom: 1px solid #3179B2;
+    padding-bottom: 2em;
 }
 header h1 {
     font-size: 250%;
