@@ -8,4 +8,12 @@ alert('Tehtävä 2. Hello world!');
 document.getElementById('write-here').innerHTML = 'Tehtävä 3. Hello world!';
 
 /* 4. Lukeminen */
-document.getElementById('fullname').value = 'Tehtävä 4.' + document.getElementById('firstname').value + ' ' + document.getElementById('lastname').value;
+document.getElementById('firstname').innerHTML = document.getElementById('firstname-input').value;
+document.getElementById('lastname').innerHTML = document.getElementById('lastname-input').value;
+document.getElementById('age').innerHTML = document.getElementById('age-input').value;
+
+/* 5. Arvon vaihtaminen */
+document.getElementById('box').setAttribute('href', 'http://www.seamk.fi');
+document.getElementById('box').style.color = 'black';
+document.getElementById('box').style.backgroundColor = 'red';
+document.getElementById('box').style.fontWeight = 'bold';
