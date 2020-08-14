@@ -17,3 +17,22 @@ document.getElementById('btnCounter').addEventListener("click", function(){
     document.getElementById('counter').value = counter;
 });
 
+/* Tehtävä 5. yksinkertaistettu laskin */
+let result = 0;
+document.getElementById('addition').addEventListener("click", function(){ 
+    result = Number(document.getElementById('operand1').value) + Number(document.getElementById('operand2').value);
+    document.getElementById('result').value = result;
+});
+document.getElementById('deduction').addEventListener("click", function(){ 
+    result = Number(document.getElementById('operand1').value) - Number(document.getElementById('operand2').value);
+    document.getElementById('result').value = result;
+});
+document.getElementById('multiplication').addEventListener("click", function(){ 
+    result = Number(document.getElementById('operand1').value) * Number(document.getElementById('operand2').value);
+    document.getElementById('result').value = result;
+});
+document.getElementById('division').addEventListener("click", function(){ 
+    result = Number(document.getElementById('operand1').value) / Number(document.getElementById('operand2').value);
+    document.getElementById('result').value = result;
+});
+
