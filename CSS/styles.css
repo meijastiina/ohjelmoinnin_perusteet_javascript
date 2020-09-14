@@ -89,3 +89,6 @@ header img {
 .code {
     font-family: 'Courier New', Courier, monospace;
 }
+.red-border {
+    border: 1px solid red;
+}
