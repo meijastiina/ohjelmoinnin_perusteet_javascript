@@ -31,9 +31,10 @@ if(age2 < 18 ) {
     // Tulosta alla olevaan laatikkoon "Olet alaikäinen", jos muuttujan arvo on pienempi kuin 18.
     document.getElementById('age4').innerHTML = "Olet alaikäinen";
 } else if(age2 == 18 ) {
-    // Tulosta alla olevaan laatikkoon "Olet juuri saavuttanut täysi-ikäisyyden", jos muuttujan arvo on pienempi kuin 18.
+    // Tulosta alla olevaan laatikkoon "Olet juuri saavuttanut täysi-ikäisyyden", jos muuttujan arvo on tasan 18.
     document.getElementById('age4').innerHTML = "Olet juuri saavuttanut täysi-ikäisyyden";
 } else {
+    // Muuttujan arvo on suurempi kuin 18.
     document.getElementById('age4').innerHTML = "Olet täysi-ikäinen";
 }
 
