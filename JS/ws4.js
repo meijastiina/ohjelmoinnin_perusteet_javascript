@@ -108,5 +108,5 @@ let password = "JavaScriptIsFun!"
 let givenPassword;
 do {
     // Pyydetään käyttäjältä salasana
-    givenPassword = prompt("Anna salasanasi");
+    givenPassword = prompt("Anna salasanasi (salasana: JavaScriptIsFun!");
 } while( password != givenPassword); // Pyydetään salasanaa niin kauan kunnes se on oikein.
