@@ -1,38 +1,65 @@
-/*1. Ensimmäinen toistolause
-
-    Alla olevalle lomakkeelle käyttäjä syöttää toistettavan lauseen ja lukumäärän montako kertaa lausetta halutaan syöttää. Sen jälkeen painiketta painamalla allaolevaan laatikkoon generoidaan syötteiden perusteella teksti.
-*/
-let button = document.getElementById('generate');
-let generatedText = document.getElementById('generatedText');
-button.onclick = function() {
-    let sentence = document.getElementById('sentence').value;
-    let times = Number(document.getElementById('times').value);
-    for (let i = 0; i < times; i++) {
-        generatedText.innerHTML += " " + sentence;
-    }
-    return false;
+// Tehtävä 1. ensimmäinen ehtolause 
+// Luo muuttuja age ja anna sille arvoksi 5.
+let age = 5;
+// Kirjoita ehtolause, jossa testataan age-muuttujan arvon perusteella onko käyttäjä täysi-ikäinen.
+if(age < 18 ) {
+    // Tulosta alla olevaan laatikkoon "Olet alaikäinen", jos muuttujan arvo on pienempi kuin 18.
+    document.getElementById('age').innerHTML = "Olet alaikäinen";
 }
-// Tehtävä 2. Lomakkeen tarkastus
-/* Kirjoita alla olevalle lomakkeelle yksinkertainen tarkastus. Kun käyttäjä painaa Lähetä-painiketta, tarkista, että kaikissa kentissä on tietoa. Jos kaikissa kentissä on tietoa, näytä alert-box, jossa on viesti "Lomake lähetetty onnistuneesti", jos ei näytä viesti "Lomakkeella virhe! Täytä kaikki kentät". Käytä syötekenttien läpikäymiseen silmukkaa ja merkitse ne kentät punaisilla reunuksilla, joista puuttuu arvo. */
+
+// Tehtävä 2. Ensimmäisen ehtolauseen tarkastus
+// Muuta age-muuttujan arvoksi 20 ja varmista, että ehtolauseesi toimii.
+let age2 = 18;
+// Kirjoita ehtolause, jossa testataan age-muuttujan arvon perusteella onko käyttäjä täysi-ikäinen.
+if(age2 < 18 ) {
+    // Tulosta alla olevaan laatikkoon "Olet alaikäinen", jos muuttujan arvo on pienempi kuin 18.
+    document.getElementById('age2').innerHTML = "Olet alaikäinen";
+}
+
+// 3. Ensimmäinen else-lause
+// Kirjoita ehtolause, jossa testataan age-muuttujan arvon perusteella onko käyttäjä täysi-ikäinen.
+if(age2 < 18 ) {
+    // Tulosta alla olevaan laatikkoon "Olet alaikäinen", jos muuttujan arvo on pienempi kuin 18.
+    document.getElementById('age3').innerHTML = "Olet alaikäinen";
+} else {
+    document.getElementById('age3').innerHTML = "Olet täysi-ikäinen";
+}
+
+// 4. Ensimmäinen else-if-lause
+// Lisää ehtolauseeseesi elseif-haara, jolla tulostetaan "Olet juuri saavuttanut täysi-ikäisyyden", jos age-muuttujan perusteella käyttäjä on täysi-ikäinen.
+if(age2 < 18 ) {
+    // Tulosta alla olevaan laatikkoon "Olet alaikäinen", jos muuttujan arvo on pienempi kuin 18.
+    document.getElementById('age4').innerHTML = "Olet alaikäinen";
+} else if(age2 == 18 ) {
+    // Tulosta alla olevaan laatikkoon "Olet juuri saavuttanut täysi-ikäisyyden", jos muuttujan arvo on tasan 18.
+    document.getElementById('age4').innerHTML = "Olet juuri saavuttanut täysi-ikäisyyden";
+} else {
+    // Muuttujan arvo on suurempi kuin 18.
+    document.getElementById('age4').innerHTML = "Olet täysi-ikäinen";
+}
+
+// Tehtävä 5. Vuorokauden ajan mukainen tervehdys
+// Kirjoita ehtolause, joka katsoo kellon ajan perusteella tulostetaanko "Huomenta", "Päivää", "Iltaa" vai "Hyvää yötä".
+// Luodaan muuttuja kellonajalle
+let currentHours = new Date().getHours();
+// Haetaan HTML-elementti muuttujaan (ei pakollista)
+let greetingElement = document.getElementById('greeting');
+
+if(currentHours > 20 ) {
+    greetingElement.innerHTML = "Hyvää yötä";
+} else if (currentHours > 18 ) {
+    greetingElement.innerHTML = "Iltaa";
+} else if (currentHours > 12 ) {
+    greetingElement.innerHTML = "Päivää"
+} else {
+    greetingElement.innerHTML = "Huomenta"
+}
+
+// Tehtävä 6. Lomakkeen tarkastus
+/* Kirjoita alla olevalle lomakkeelle yksinkertainen tarkastus. Kun käyttäjä painaa Lähetä-painiketta, tarkista, että kaikissa kentissä on tietoa. Jos kaikissa kentissä on tietoa, näytä alert-box, jossa on viesti "Lomake lähetetty onnistuneesti", jos ei näytä viesti "Lomakkeella virhe! Täytä kaikki kentät" */
 document.getElementById('userForm').onsubmit = function() {
-    // Haetaan kaikki input-tyyppiset elementit. Muista että tämä palauttaa kaikki input-elementit.
-    let inputs = document.getElementsByTagName("input");
-    // Tarvitaan muuttuja, jossa pidetään kirjaa siitä onko lomake virheetön vai ei. Alustetaan se trueksi
-    let formOK = true;
-    for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value.length > 0) {
-            //Syötekentässä tietoa, kenttä ok
-            // -> poistetaan varalta punareunus jos se on aiemmin lisätty
-            inputs[i].classList.remove("red-border");
-        } else {
-            // Syötekentässä ei ole tietoa 
-            // -> päivitetään muuttujan arvoksi false
-            formOK = false;
-            // -> merkataan kenttä punaisilla reunuksilla
-            inputs[i].classList.add("red-border");
-        }
-    }
-    if(formOK) {
+    // Jos etunimi JA sukunimi JA ikä on syötetty
+    if(document.getElementById('firstname').value.length > 0 && document.getElementById('lastname').value.length > 0 && document.getElementById('ageInput').value.length > 0) {
         alert('Lomake lähetetty onnistuneesti');
         return true; // Lomake ok -> voidaan lähettää (palautetaan true eli tosi)
     } else {
@@ -40,73 +67,3 @@ document.getElementById('userForm').onsubmit = function() {
         return false; // Lomake ei ok -> Ei voida lähettää (palautetaan false eli epätosi)
     }
 }
-
-/* 3. Tehtävälistan tulostus
-Tulostaa allaolevaan laatikkoon listana tämän sivun tehtävät. */
-// Haetaan kaikki main-elementin sisällä olevat h2-elementit
-let tasks = document.querySelectorAll('main h2');
-// Luodaan uusi ul-elementti. Huom. tämä ei vielä lisää sitä DOMiin.
-let list = document.createElement("ul");
-// Loopataan läpi kaikki main-elementin sisällä olevat h2-elementit.
-for (let i = 0; i < tasks.length; i++) {
-    // Luodaan uusi li-elementti. Huom. tämä ei vielä lisää sitä DOMiin.
-    let item = document.createElement("li");
-    // Asetetaan li-elementille h2-elementiltä teksti
-    item.innerHTML = tasks[i].innerHTML;
-    // Lisätään li-elementti ul-listaan.
-    list.appendChild(item);
-}
-// Lisätään lista taskList-elementille. 
-document.getElementById('taskList').appendChild(list);
-
-/*
-4. Syyskuu 2020 tulostus
-Tulosta allaolevaan laatikkoon syyskuun 2020 kalenterinäkymä.
-*/
-// Luodaan table-elementti kalenteria varten
-let calendar = document.createElement("table");
-// Luodaan muuttuja, jossa syyskuun päivien lukumäärä
-let daysInMonth = 30;
-// Luodaan muuttuja, jossa tieto mikä viikonpäivä on kuukauden ensimmäinen
-let firstDay = new Date('2020/09/01');
-let firstWeekday = firstDay.getDay();
-// Luodaan muuttuja, jossa pidetään kirjaa siitä minkä päivän kohdalla ollaan menossa ja alustetaan se kuukauden ensimmäiseksi päiväksi.
-let currentDay = firstDay.getDate();
-// Luodaan taulukkoon solut niin että rivejä tulee viisi 
-for (let rowNumber = 0; rowNumber < 5; rowNumber++) {
-    // Luodaan tr-elementti jokaiselle riville
-    let row = document.createElement('tr');
-    // Luodaan taulukkoon solut niin, että jokaisella rivillä on seitsemän solua
-    for (let col = 0; col < 7; col++) {
-        // Luodaan td-elementit
-        let cell = document.createElement('td');
-        // Jos ollaan ensimmäisellä rivillä ja sarakkeella joka on pienempi kuin kuukauden ensimmäinen päivä (eli viikon päivät jotka ovat edellisen kuukauden puolella) jätetään solu tyhjäksi
-        if ( !(rowNumber == 0 && col < firstWeekday)) {
-            // Ja kunhan käsiteltävä päivä on pienempi kuin kuukauden päivien lukumäärä
-            if (currentDay <= daysInMonth) {
-                // Tulostetaan soluun päivä
-                cell.innerHTML = currentDay;
-                currentDay++;
-            }
-        } 
-        // Lisätään solut riville
-        row.appendChild(cell);
-    }
-    // Lisätään rivi kalenteriin (table-elementtiin).
-    calendar.appendChild(row);
-}
-// Lisätään kalenteri sille annettuun paikkaan.
-document.getElementById('september2020').appendChild(calendar);
-
-/*
-5. Salasana
-Pyydä käyttäjältä salasanaa ja päästä käyttäjä sivulle vasta kun salasana on oikein.
-*/
-// Kovakoodataan oikea salasana tähän (näin ei siis oikeasti tietenkään tehtäisi)
-let password = "JavaScriptIsFun!"
-// Luodaan muuttuja salasanaa varten
-let givenPassword;
-do {
-    // Pyydetään käyttäjältä salasana
-    givenPassword = prompt("Anna salasanasi (salasana: JavaScriptIsFun!");
-} while( password != givenPassword); // Pyydetään salasanaa niin kauan kunnes se on oikein.

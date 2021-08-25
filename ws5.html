@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>WS5 - Metodit</title>
+    <title>WS5 - Toistolauseet</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" href="CSS/styles.css">
 </head>
@@ -10,11 +10,48 @@
     <header>
         <h2><a href="/">Ohjelmoinnin perusteet</a></h2>
         <img src="img/javascript.png" alt="JavaScript Logo">
-        <h1>WS5 - Metodit</h1>
+        <h1>WS5 - Toistolauseet</h1>
     </header>
-    <!-- Sisältö päättyy-->
+    <main>
+        <!-- Tehtävä 1. ensimmäinen toistolause -->
+        <h2>1. Ensimmäinen toistolause</h2>
+        <p>Alla olevalle lomakkeelle käyttäjä syöttää toistettavan lauseen ja lukumäärän montako kertaa lausetta halutaan syöttää. Sen jälkeen painiketta painamalla allaolevaan laatikkoon generoidaan syötteiden perusteella teksti.</p>
+        <form>
+            <label for="sentence">Tulostettava lause</label>
+            <textarea id="sentence"></textarea>
+            <label for="times">Times:</label><input type="number" id="times" />
+            <input id="generate" type="submit" value="Generate" />
+        </form>
+        <div id="generatedText" class="bordered"></div>
+        <hr>
+        <!-- Tehtävä 2. Lomakkeen tarkastus -->
+        <h2>2. Lomakkeen tarkastus</h2>
+        <p>Kirjoita alla olevalle lomakkeelle yksinkertainen tarkastus. Kun käyttäjä painaa Lähetä-painiketta, tarkista, että kaikissa kentissä on tietoa. Jos kaikissa kentissä on tietoa, näytä alert-box, jossa on viesti "Lomake lähetetty onnistuneesti", jos ei näytä viesti "Lomakkeella virhe! Täytä kaikki kentät". Käytä syötekenttien läpikäymiseen silmukkaa ja merkitse ne kentät punaisilla reunuksilla, joista puuttuu arvo.</p>
+        <form id="userForm" class="bordered">
+            <label for="firstname">Etunimi: </label><input type="text" id="firstname" />
+            <label for="lastname">Sukunimi: </label><input type="text" id="lastname" />
+            <label for="age">Ikä: </label><input type="number" id="ageInput" />
+            <input type="submit">
+        </form>
+        <hr>
+        <!-- Tehtävä 3. Tehtävälistan tulostus -->
+        <h2>3. Tehtävälistan tulostus</h2>
+        <p>Tulostaa allaolevaan laatikkoon listana tämän sivun tehtävät.</p>
+        <div class="bordered" id="taskList"></div>
+        <hr>
+        <!-- Tehtävä 4. Syyskuu 2020 tulostus -->
+        <h2>4. Syyskuu 2020 tulostus</h2>
+        <p>Tulosta allaolevaan laatikkoon syyskuun 2020 kalenterinäkymä.</p>
+        <div class="bordered" id="september2020"></div>
+        <hr>
+        <!-- Tehtävä 5. Salasana -->
+        <h2>5. Salasana</h2>
+        <p>Pyydä käyttäjältä salasanaa ja päästä käyttäjä sivulle vasta kun salasana on oikein. Oikean salasanan voit tässä harjoituksessa kovakoodata.</p>
+        <hr>
+        <!-- Sisältö päättyy-->
+    </main>
 	<footer>
-        <a href="ws4.html"><< Edellinen</a></a>
+        <a href="ws4.html"><< Edellinen</a> || <a href="ws6.html">Seuraava >></a>
         <p>&copy; Meija Lohiniva Seinäjoki UAS</p>
     </footer>
 </body>
