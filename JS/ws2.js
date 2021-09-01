@@ -12,12 +12,12 @@ document.getElementById('fullname-input').value = document.getElementById('first
 
 /* Tehtävä 4. painikelaskuri */
 let counter = 0;
-document.getElementById('btnCounter').addEventListener("click", function(){ 
+document.getElementById('btnCounter').onclick = function(){ 
     counter++;
     document.getElementById('counter').value = counter;
-});
+};
 
-/* Tehtävä 5. yksinkertaistettu laskin */
+/* Tehtävä 5. yksinkertaistettu laskin. Voit käyttää joko .onclick tai .addEventListener -komentoa */
 let result = 0;
 document.getElementById('addition').addEventListener("click", function(){ 
     result = Number(document.getElementById('operand1').value) + Number(document.getElementById('operand2').value);
